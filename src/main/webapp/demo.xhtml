@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:prime="http://primefaces.org/ui">
+
+     <h:head>
+        <title>title</title>
+     </h:head>   
+
+     <h:body>
+        <prime:panelGrid columns="2">
+         <prime:barcode value="5675354567230" type="ean13" />
+         <h:outputText value="5675354567230" />
+         <prime:barcode value="5675354567230" type="postnet" />
+         <h:outputText value="5675354567230" />
+         <prime:barcode value="http://www.angularfaces.com" type="qr" />
+         <h:outputText value="http://www.angularfaces.com" />
+       </prime:panelGrid>
+     </h:body>
+</html>

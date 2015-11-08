@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'></link>
+        <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css'></link>
+    </h:head>
+    <h:body>
+        <a href='http://localhost:8080/DistStudyJSF/'>Home page</a><br />
+        <div class="container">
+
+            <h1>Table Teachers</h1>
+
+            <form role="form" class="form-inline" action="MainServlet" method="POST">
+                <div class="form-group">firstName: <input class="form-control" type="text" name="firstName" value="test"></input></div>
+                <div class="form-group">secondName: <input class="form-control" type="text" name="secondName" value="test"></input></div>
+                <div class="form-group">lastName: <input class="form-control" type="text" name="lastName" value="test"></input></div>
+                <div style="width: 100%; height: 25px;"></div>
+                <div class="form-group">birthday: <input class="form-control" type="date" name="birthday" ></input></div>
+                <div class="form-group">degree: <input class="form-control" type="number" name="degree" value="6"></input></div>
+                <div class="form-group">kafedra: <input class="form-control" type="number" name="kafedra" value="4"></input></div>
+                <input type="hidden" name="add" value="true"></input> 
+                <div style="width: 100%; height: 20px;"></div>
+                <input class="btn btn-success" type="submit" value="Add new field"></input>
+            </form>
+            <div style="width: 100%; height: 50px;"></div>
+
+            <form role="form" class="form-inline" action="SearchServlet" method="GET">
+                <div class="form-group">firstName: <input class="form-control" type="text" name="firstName"></input></div>
+                <div class="form-group">lastName: <input class="form-control" type="text" name="lastName"></input></div>
+                <div class="form-group">kafedra: <input class="form-control" type="number" name="kafedra"></input></div>
+
+                <input type="hidden" name="search" value="true"></input>
+                <input class="btn btn-def" type="submit" value="Find"></input>
+            </form>
+            <div style="width: 100%; height: 50px;"></div>
+
+            <form role="form" action="faces/update.xhtml" method="get">
+                <input type="hidden" name="update" value="true"></input>
+                <input class="btn btn-info" type="submit" value="Update table"></input>
+            </form>
+
+        </div>
+        <br />
+    </h:body>
+</html>
+

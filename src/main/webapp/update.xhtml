@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:compose="http://xmlns.jcp.org/jsf/composite/custom">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'></link>
+        <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css'></link>
+        <style>
+            form{
+                padding: 10px;
+            }
+            input {
+                padding: 10px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Table updating</h1>
+       
+        <table class='table-striped' style="text-align: center; width: 75%;">
+
+        <c:forEach var="t" items="#{teacherDAO.all}">    
+            <tr>
+                <td>
+                    #{t.getFirstName()}
+                </td>
+                <td>
+                    #{t.getSecondName()}
+                </td>
+                <td>
+                    #{t.getLastName()}
+                </td>
+                <td>
+                    #{t.getDegree()}
+                </td>
+                <td>
+                    #{t.getKafedra()}
+                </td>
+                
+                
+                <td>
+                    <form action="UpdateServlet" method="GET" style="margin: 5px 0;">
+                        <compose:update-component styleclass="btn-info" value="update" index="#{t.getId()}" nameid="id_upd" />
+                    </form>
+
+                </td>
+                <td>
+                    <form action="UpdateServlet" method="GET">
+                        <input class="btn btn-danger" type="submit" value="delete"></input>
+                        <input type="hidden" name="id_del" value="#{t.getId()}"></input>
+                    </form>
+                </td>
+                    
+            </tr>
+        </c:forEach>
+        </table>
+    </h:body>
+</html>
+

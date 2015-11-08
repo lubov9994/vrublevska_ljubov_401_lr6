@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+    <composite:attribute name="styleclass" />
+    <composite:attribute name="value" />
+    <composite:attribute name="index" />
+    <composite:attribute name="nameid" />
+</composite:interface>
+
+<composite:implementation>
+    <input type="hidden" name="#{cc.attrs.nameid}" value="#{cc.attrs.index}"></input>    
+    <input type="submit" class="btn #{cc.attrs.styleclass}" value="#{cc.attrs.value}"></input>
+</composite:implementation>
+
+</html>
+
